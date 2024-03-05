@@ -1,0 +1,12 @@
+{
+  "name": "comment-Io",
+  "id": "comment-io",
+  "description": "events triggering from magento to appbuilder",
+  "version": "0.0.1",
+  "runtimeActions": [
+    {
+      "name": "generic",
+      "eventCodes": []
+    }
+  ]
+}
