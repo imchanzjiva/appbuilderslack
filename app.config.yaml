@@ -16,16 +16,14 @@ application:
               final: true
             relations:
               event-listener-for: []
-  events:
-    registrations:
-      Event Registration Default:
-        description: Registration for IO Events
-        events_of_interest:
-          - provider_metadata: cloudmanager
-            event_codes:
-              - pipeline_execution_step_end
-          - provider_metadata: dx_commerce_events
-            event_codes:
-              - com.adobe.commerce.observer.catalog_product_save_after
-        runtime_action: demoslack/generic
-  actions: actions
+          slack-event:
+            function: actions/slack-event/index.js
+            web: 'yes'
+            runtime: nodejs:16
+            inputs:
+              LOG_LEVEL: debug
+              apiKey: $SERVICE_API_KEY
+            annotations:
+              require-adobe-auth: true
+              final: true
+
